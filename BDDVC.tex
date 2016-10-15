@@ -1,0 +1,189 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[rightcaption]{sidecap}
+\usepackage{listings}
+
+\usepackage{wrapfig}
+
+\title{\textbf{Microcontroller Based Bidirectional Digital Visitor Counter}}
+\author{Md. Al Mamun Siddiki, SH-81, 3rd year, 2015-2016,\\ Department of EEE,University of Dhaka. }
+\date{16th October 2016}
+
+\begin{document}
+
+\maketitle
+
+\section{Abstract}
+This paper presents the design and construction of a digital bidirectional visitor counter (DBVC). The DBVC is a
+reliable circuit that takes over the task of counting number of persons / visitors in the room very accurately and
+beeps a warning alarm when the number of visitors exceeds the capacity limit of the auditorium/hall. When
+somebody enters the room then the counter is incremented by one (+1) and when any one leaves the room then
+the counter is decremented by one (-1). The total number of persons inside the room is also displayed on the
+LCD (Liquid Crystal Display). 
+\\
+The microcontroller is used for detecting an entry or exit action and computing the figures (addition and
+subtraction) to acquire accurate results. It receives the signals from the sensors, and this signal is operated under
+the control of embedded programming code which is stored in ROM of the microcontroller. The microcontroller
+continuously monitors the Infrared Receivers. When any object pass through the IR Receiver's then the IR Rays
+falling on the receivers are obstructed.
+\\
+The obstruction occurs under two circumstances, either you obstruct sensor 1 (i.e. outside the building) before
+sensor 2 (i.e. which is inside the building) this shows that you are entering the building or you do it the other way
+round, which is obstructing sensor 2 before sensor 1 to indicates an exit movement. This obstruction is sensed by
+the Microcontroller, computed and displayed by a 16x2 LCD screen.
+
+\section{Introduction}
+Visitor counting is simply a measurement of the visitor traffic entering and exiting conference rooms, malls,
+sports venues, etc. With the increase in standard of living, there is a sense of urgency for developing circuits that
+would ease the complexity of life.
+
+\par
+Over the years, the usage of Visitor counters has become very positive in terms of monitoring crowd behavior at
+a particular place. It began with a mechanical tally counter which was introduced to replace the use of tally stick.
+A tally (or tally stick) was an ancient memory aid device used to record and document numbers, quantities, or
+even messages. Historical reference is made by Pliny the Elder (AD 23–79) about the best wood to use for
+tallies, and by Marco Polo (1254–1324) who mentions the use of the tally in China. Tallies have been used for
+numerous purposes such as messaging and scheduling, and especially in people counting, financial and legal
+transactions, to the point of being accuracy.\\
+\par
+
+The substitute of the tally stick was the mechanical tally counter, it is a device used to incrementally count
+something, typically passing. One of the most common things tally counters are used for is counting people,
+animals, or things that are quickly entering and existing a location.\\
+
+\par
+As times went on, an electronic tally counter was introduced which used an LCD screen to display the count, and
+a push button to advance the count. Some also have a button to decrement the count in case of a miscount. Now,
+due to technology advancement, various type of people counter has been introduced to automatically count the
+number of people entering and exiting a building at a particular time. Some of these are laser beam, thermal
+imaging, video camera and the infra-red sensor. All these sensors play their role respectively as visitor detector.
+These devices are very reliable and accurate in terms of performance as compared to the mechanical tally
+counter.\\
+
+\par
+In the past years, several well established institutions (libraries, community centers, auditorium, etc.) across the
+globe have encountered various incidents related to traffic monitoring. It has been a necessity to monitor the
+visitors to carry out the human traffic management task and tourist flow estimate to vindicate accurate result for
+the organizational marketing and statistical research. This eventually indicates the patronage rate of goods and
+services by consumers. Therefore, we deem it appropriate to identify these problems encountered by our various
+organizations and find solutions to them by designing a digital bidirectional visitor counter (DBVC).\\
+
+\par
+The primary method for counting the visitors involves hiring human auditors to stand and
+number of visitors who enter or pass by a certain location.\\
+
+\par
+manually tally the
+The human auditing application or the human-based data collection was unreliable and came at great cost. For
+instance, in situations where a large number of visitors entering and exiting buildings such as conference rooms,
+law courts, libraries, malls and sports venues, going for human auditors to manually tally the number of visitors
+may result in inaccurate data collection. For this reason, many organizations have tried to find solutions to
+mitigate the inaccurate traffic monitoring issues. It is our intention to design and construct this digital
+bidirectional visitor counter (DBVC) with maximum efficiency and make it very feasible for anyone who wants
+to design and construct the prototype. Building this circuit will provide information to management on the
+volume and flow of people in a building.\\
+
+\par
+Our main objective in this paper includes designing and constructing a visitor counter which will make a
+controller based model to count and compute the number of visitors in a building at a particular time. It is also
+our objective that this controller base model beeps a warning alarm when the capacity of the building is
+exceeded.\\
+
+\par
+The significance of the design and construction in this paper is enshrined in the fact that it provides the assurance
+of the health and safety of the occupants in a building at all time, since the visitors are guaranteed of traffic
+decongestion. It also provides accurate data for various research and analytical purposes as it generates the
+hourly, daily, monthly, and yearly report. The device helps to reduces pressure on building facilities by
+prompting the security, when the capacity of the building is exceeded. It goes a long way to assist rescue team or
+security services to come up with strategic procedure in dealing with emergency issues like people trapped in a
+structure as a result of hijacks and collapsed building which occurred recently at the West End Gate Mall in
+Kenya and Melcom in Ghana respectively.\\
+It is the usual norm that the design and construction of every device comes with some limitations and ours
+cannot be an exception. In this paper, our device might count more than two people as one when they interrupt
+the infrared beam at the same time in a linear direction. For this reason, the device must be installed at a narrow
+entrance/exit where one person enters at a time. Another limitation can be linked to the inability of sensor in the
+device to differentiate between human being and objects interrupting the IR signal. Finally, the device will fail to
+function in case of any power interruption, which might lead to a miscount or provide inaccurate data when
+power is restored.
+
+\section{Methodology}
+This section introduces the methodology involved in the design and construction of the Digital Bidirectional
+Visitor Counter (DBVC). Using the Takoradi Polytechnic Library crowd management situation as a case study,
+it was realized that the library’s capacity often gets exceeded during its peak usage period (examination period)
+and therefore makes the environment uncomfortable for learning. This problem was studied by visually
+observing students reaction anytime the library’s capacity was exceeded. Another study was made on the
+Melcom tragedy incident, whereby the exact number of people trapped in the collapse building was unknown.
+False information about the number of people trapped was given to the rescue team at their arrival, but they
+ended up rescuing more survivors than the expected number revealed to them. This means a lot of people could
+have died if the rescue team relied on the information given to them.\\
+
+\par
+This chapter covers all parts of a DBVC from the system overview to the individual components required to
+assemble the visitor counter to provide effective crowd management as in monitoring and controlling. The
+microcontroller based visitor counter is designed to respond to the flaws in the operations of the existing
+counters. The design in its sense has four (4) main sections and circuits as shown in Figure 1. These include
+detection section (IR sensor circuitry), microcontroller section, alerting section (LCD and Buzzer) and power
+supply circuit.
+
+\subsection{Microcontroller Section}
+The microcontroller section consists of the PIC16F877A Microcontroller which is a powerful (200 nanosecond
+instruction execution) easy-to-program (only 35 single word instructions) CMOS FLASH-based 8-bit
+microcontroller packs Microchip's powerful PIC architecture into a 40-pin package and is upwards compatible
+with the PIC12CXXX and PIC16C7X devices. The PIC16F877A features 256 bytes of EEPROM data memory,
+self-programming, an ICD, 2 Comparators, 8 channels of 10-bit Analog-to-Digital (A/D) converter.
+    
+
+\vspace{2cm}
+\begin{SCfigure}[0.5][h]
+\caption{Pictorial view of a PIC16F877A microcontroller}
+\includegraphics[width=0.6\textwidth]{PIC16F877A}
+\end{SCfigure}
+
+\newpage
+\subsection{Circuit Diagram}
+I use LED instead of LCD monitor and  push button instead of IR sensors. 
+\vspace{1.5cm}
+\includegraphics[width=11cm,height=11cm]{circuit}
+
+\subsection{Program(for HI-TECH C compiler)}
+\begin{lstlisting}
+#include <pic.h>
+#define _XTAL_FREQ 20e6
+__CONFIG(0x3F3A);
+unsigned char count=0;
+main()
+{
+ADCON1=0b00001111;    //to make PORTE as digital I/O pins.
+TRISD=0;
+TRISE0=1;
+TRISE1=1;
+while(1)
+    {
+    if(RE0==1)
+        {
+        if(count<255){count++;}
+        __delay_ms(50);
+        while(RE0==1);
+        __delay_ms(50);
+        }
+    
+    if(RE1==1)
+        {
+        if(count>0){count--;}
+        __delay_ms(50); 
+        while(RE1==1);
+        __delay_ms(50);
+        }
+    PORTD=count;
+    }
+}
+\end{lstlisting}
+
+\section{Results and Discussion}
+The actual project was very defficult to implement. So for simplicity I used push button instead of IR sensors and also used LED for display the results instead using a LCD monitor. For entering os a person I use the 1st push button and existing of a person I use 2nd push button.The result is displayed in binary form by LEDs. 
+
+\section*{References}
+[1] blog.vinu.co.in 
+
+\end{document}
